@@ -17,3 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// List Pets
+Route::get('pets', 'PetController@index');
+
+// List single Pet
+Route::get('pet/{id}', 'PetController@show');
+
+// Create new Pet
+Route::post('pet', 'PetController@store');
+
+// Update Pet
+Route::put('pet', 'PetController@store');
+
+// Delete Pet 
+Route::delete('pet/{id}', 'PetController@destroy');
